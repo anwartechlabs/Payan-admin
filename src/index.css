@@ -1,0 +1,32 @@
+@import '@fontsource/inter/latin-400.css';
+@import '@fontsource/inter/latin-500.css';
+@import '@fontsource/inter/latin-600.css';
+@import '@fontsource/inter/latin-700.css';
+@import '@fontsource/marcellus/latin-400.css';
+
+:root {
+  font-family: 'Inter', sans-serif;
+  color: #1c1b1b;
+  background: #f6f3f2;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  --surface: #fcf9f8;
+  --surface-low: #f6f3f2;
+  --surface-high: #eae7e7;
+  --white: #ffffff;
+  --ink: #1c1b1b;
+  --ink-muted: #6f6f68;
+  --border: #e6e6df;
+  --primary: #ffff66;
+  --primary-dark: #626200;
+  --primary-soft: #fefe88;
+  --error: #ba1a1a;
+  --success: #3f6b42;
+  --shadow: 0 8px 24px rgba(22, 22, 22, 0.08);
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; min-height: 100vh; background: var(--surface-low); }
+button, input { font: inherit; }
+button { color: inherit; }
