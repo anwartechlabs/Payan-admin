@@ -1,6 +1,8 @@
 .app-shell { min-height: 100vh; display: grid; grid-template-columns: 264px minmax(0, 1fr); }
 .sidebar { position: sticky; top: 0; height: 100vh; display: flex; flex-direction: column; padding: 28px 20px 20px; background: #1c1b1b; color: #fff; }
 .brand-mark { display: flex; align-items: center; gap: 11px; padding: 0 10px 30px; }
+.brand-symbol-logo { width: 36px; height: 36px; object-fit: contain; flex-shrink: 0; display: block; }
+.brand-symbol-logo-large { width: 44px; height: 44px; }
 .brand-symbol { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 10px; background: var(--primary); color: var(--ink); font: 400 21px/1 'Marcellus', serif; }
 .brand-name { font: 400 20px/1 'Marcellus', serif; letter-spacing: .16em; }
 .nav-label { margin: 12px 12px 8px; color: #aaa79e; font-size: 10px; font-weight: 700; letter-spacing: .14em; }

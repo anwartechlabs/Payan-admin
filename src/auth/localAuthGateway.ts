@@ -1,6 +1,7 @@
 import type { AdminSession } from '../domain/admin'
 
-const sessionStorageKey = 'payan.admin.session.v1'
+const sessionStorageKey = 'sakyan.admin.session.v1'
+const legacySessionStorageKey = 'payan.admin.session.v1'
 
 export class AuthenticationError extends Error {
   constructor(message: string) {
@@ -38,8 +39,8 @@ export async function signIn(
   const email = emailInput.trim().toLowerCase()
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
-  if (!emailPattern.test(email) || !email.endsWith('@payan.ph')) {
-    throw new AuthenticationError('Use a valid @payan.ph workspace email.')
+  if (!emailPattern.test(email) || (!email.endsWith('@sakyan.ph') && !email.endsWith('@payan.ph'))) {
+    throw new AuthenticationError('Use a valid @sakyan.ph workspace email.')
   }
 
   if (password.length < 8) {
@@ -48,7 +49,7 @@ export async function signIn(
 
   const session: AdminSession = {
     email,
-    displayName: getDisplayName(email) || 'Payan Administrator',
+    displayName: getDisplayName(email) || 'Sakyan Administrator',
     role: 'super_admin',
   }
 
@@ -57,7 +58,7 @@ export async function signIn(
 }
 
 export function restoreSession(): AdminSession | null {
-  const serializedSession = sessionStorage.getItem(sessionStorageKey)
+  const serializedSession = sessionStorage.getItem(sessionStorageKey) ?? sessionStorage.getItem(legacySessionStorageKey)
   if (!serializedSession) {
     return null
   }
@@ -69,13 +70,16 @@ export function restoreSession(): AdminSession | null {
     }
   } catch {
     sessionStorage.removeItem(sessionStorageKey)
+    sessionStorage.removeItem(legacySessionStorageKey)
     return null
   }
 
   sessionStorage.removeItem(sessionStorageKey)
+  sessionStorage.removeItem(legacySessionStorageKey)
   return null
 }
 
 export function signOut(): void {
   sessionStorage.removeItem(sessionStorageKey)
+  sessionStorage.removeItem(legacySessionStorageKey)
 }

@@ -39,11 +39,11 @@ describe('rider verification transitions', () => {
       nextStatus: 'approved',
       reviewNote: '',
       reviewedAt: '2026-08-29T10:00:00+08:00',
-      reviewedBy: 'admin@payan.ph',
+      reviewedBy: 'admin@sakyan.ph',
     })
 
     expect(reviewedApplication.status).toBe('approved')
-    expect(reviewedApplication.reviewedBy).toBe('admin@payan.ph')
+    expect(reviewedApplication.reviewedBy).toBe('admin@sakyan.ph')
   })
 
   it('prevents approval when a required document is missing', () => {
@@ -65,7 +65,7 @@ describe('rider verification transitions', () => {
       nextStatus: 'approved',
       reviewNote: '',
       reviewedAt: '2026-08-29T10:00:00+08:00',
-      reviewedBy: 'admin@payan.ph',
+      reviewedBy: 'admin@sakyan.ph',
     })).toThrow(VerificationTransitionError)
   })
 
@@ -75,7 +75,7 @@ describe('rider verification transitions', () => {
       nextStatus: 'needs_resubmission',
       reviewNote: 'Short',
       reviewedAt: '2026-08-29T10:00:00+08:00',
-      reviewedBy: 'admin@payan.ph',
+      reviewedBy: 'admin@sakyan.ph',
     })).toThrow('at least 8 characters')
   })
 
@@ -85,7 +85,7 @@ describe('rider verification transitions', () => {
       nextStatus: 'needs_resubmission',
       reviewNote: 'Upload a clearer file.',
       reviewedAt: '2026-08-29T10:00:00+08:00',
-      reviewedBy: 'admin@payan.ph',
+      reviewedBy: 'admin@sakyan.ph',
     })).toThrow('Only pending applications')
   })
 })

@@ -9,6 +9,7 @@ import {
 } from 'lucide-react'
 import { AuthenticationError, signIn } from '../auth/localAuthGateway'
 import type { AdminSession } from '../domain/admin'
+import sakyanLogo from '../assets/PAYAN_LOGO.png'
 
 interface LoginScreenProps {
   onSignedIn: (session: AdminSession) => void
@@ -42,13 +43,13 @@ export function LoginScreen({ onSignedIn }: LoginScreenProps) {
 
   return (
     <main className="login-page">
-      <section className="login-brand-panel" aria-label="Payan administration">
+      <section className="login-brand-panel" aria-label="Sakyan administration">
         <div className="login-brand-mark">
-          <span className="brand-symbol brand-symbol-large">P</span>
-          <span className="brand-name">PAYAN</span>
+          <img src={sakyanLogo} alt="Sakyan Logo" className="brand-symbol-logo brand-symbol-logo-large" />
+          <span className="brand-name">SAKYAN</span>
         </div>
         <div className="login-brand-copy">
-          <p className="eyebrow eyebrow-on-dark">PAYAN OPERATIONS</p>
+          <p className="eyebrow eyebrow-on-dark">SAKYAN OPERATIONS</p>
           <h1>Move Valencia with confidence.</h1>
           <p>
             One secure workspace for rider verification, booking visibility,
@@ -59,7 +60,7 @@ export function LoginScreen({ onSignedIn }: LoginScreenProps) {
           <ShieldCheck size={20} aria-hidden="true" />
           <span>
             <strong>Restricted operations portal</strong>
-            Access is limited to authorized Payan administrators.
+            Access is limited to authorized Sakyan administrators.
           </span>
         </div>
       </section>
@@ -67,12 +68,12 @@ export function LoginScreen({ onSignedIn }: LoginScreenProps) {
       <section className="login-form-panel">
         <div className="login-form-wrap">
           <div className="mobile-login-brand">
-            <span className="brand-symbol">P</span>
-            <span className="brand-name">PAYAN</span>
+            <img src={sakyanLogo} alt="Sakyan Logo" className="brand-symbol-logo" />
+            <span className="brand-name">SAKYAN</span>
           </div>
           <p className="eyebrow">ADMINISTRATION</p>
           <h2>Welcome back</h2>
-          <p className="login-intro">Sign in with your Payan workspace account.</p>
+          <p className="login-intro">Sign in with your Sakyan workspace account.</p>
 
           <form className="login-form" onSubmit={handleSubmit} noValidate>
             <label htmlFor="admin-email">Workspace email</label>
@@ -82,7 +83,7 @@ export function LoginScreen({ onSignedIn }: LoginScreenProps) {
                 id="admin-email"
                 type="email"
                 autoComplete="username"
-                placeholder="name@payan.ph"
+                placeholder="name@sakyan.ph"
                 value={email}
                 onChange={(event) => setEmail(event.target.value)}
                 aria-describedby={error ? 'login-error' : undefined}
@@ -121,12 +122,12 @@ export function LoginScreen({ onSignedIn }: LoginScreenProps) {
             {error ? <p className="form-error" id="login-error" role="alert">{error}</p> : null}
 
             <button className="primary-button login-button" type="submit" disabled={isSubmitting}>
-              {isSubmitting ? 'Signing in…' : 'Sign in to Payan'}
+              {isSubmitting ? 'Signing in…' : 'Sign in to Sakyan'}
               {!isSubmitting ? <ArrowRight size={19} aria-hidden="true" /> : null}
             </button>
           </form>
           <p className="local-auth-note">
-            This prototype validates a Payan workspace email and keeps only a
+            This prototype validates a Sakyan workspace email and keeps only a
             non-sensitive session record in this browser.
           </p>
         </div>

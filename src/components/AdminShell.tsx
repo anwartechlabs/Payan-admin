@@ -14,6 +14,7 @@ import {
 import type { AdminSession, AdminView } from '../domain/admin'
 import { getInitials } from '../domain/formatters'
 import { getRoleLabel, hasPermission } from '../domain/permissions'
+import sakyanLogo from '../assets/PAYAN_LOGO.png'
 
 interface AdminShellProps {
   session: AdminSession
@@ -70,9 +71,9 @@ export function AdminShell({
   return (
     <div className="app-shell">
       <aside className="sidebar">
-        <div className="brand-mark" aria-label="Payan administration">
-          <span className="brand-symbol">P</span>
-          <span className="brand-name">PAYAN</span>
+        <div className="brand-mark" aria-label="Sakyan administration">
+          <img src={sakyanLogo} alt="Sakyan Logo" className="brand-symbol-logo" />
+          <span className="brand-name">SAKYAN</span>
         </div>
         <nav aria-label="Primary navigation">
           <p className="nav-label">WORKSPACE</p>

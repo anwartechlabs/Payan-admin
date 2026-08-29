@@ -1,13 +1,13 @@
-# Payan Admin
+# Sakyan Admin
 
-Payan Admin is the operations dashboard connecting the Payan passenger app and
-the Payan Fleet rider app. It provides:
+Sakyan Admin is the operations dashboard connecting the Sakyan passenger app and
+the Sakyan Fleet rider app. It provides:
 
 - Workspace sign-in with a browser-local prototype session.
 - Permission-based access to rider verification and ride monitoring.
 - Rider document review with explicit approval and resubmission transitions.
 - Searchable live, completed, and cancelled booking records.
-- Responsive layouts following the Payan Valencia Zest design system.
+- Responsive layouts following the Sakyan Valencia Zest design system.
 
 ## Local development
 
@@ -16,7 +16,7 @@ npm install
 npm run dev
 ```
 
-Prototype sign-in accepts a valid `@payan.ph` email and a password of at least
+Prototype sign-in accepts a valid `@sakyan.ph` email and a password of at least
 eight characters. Passwords are not stored. Production authentication and
 authorization must be enforced by the connected backend before real rider
 documents or ride data are used.

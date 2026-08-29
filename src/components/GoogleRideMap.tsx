@@ -126,7 +126,7 @@ export function GoogleRideMap({ rides, variant, onSelectRide }: GoogleRideMapPro
 
   return (
     <div className={`google-ride-map google-ride-map-${variant} ${variant === 'full' ? 'panel' : ''}`}>
-      <div ref={mapContainerRef} className="google-map-canvas" aria-label="Google map showing active Payan rides" />
+      <div ref={mapContainerRef} className="google-map-canvas" aria-label="Google map showing active Sakyan rides" />
       {loadStatus === 'loading' ? (
         <div className="map-state map-loading-state" role="status">
           <span className="map-loading-spinner" />
