@@ -34,3 +34,7 @@ apps and are not exposed to the browser bundle.
 npm run lint
 npm run build
 ```
+
+## Credentials
+* any email works as long as it has @sakyan.ph
+* any passwords works as long as it has 8 characters
